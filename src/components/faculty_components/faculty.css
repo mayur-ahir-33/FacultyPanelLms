@@ -1,0 +1,58 @@
+.scrollable{
+  overflow-x: scroll; 
+  height: 110px;
+
+}
+.subjectCard{
+  width: 500px;
+}
+.subjectCardHeader {
+  background-color: royalblue;
+  /* background-image: url(./Images/banner4.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  height: 100px;
+  color: white;
+  line-height: 100px;
+}
+
+.GiBlackBook{
+  margin: 30px;
+}
+
+.viewAll{
+  float: right;
+  margin: 10px 30px;
+}
+
+.deadlineCard{
+  width: 500px;
+  height: 280px;
+}
+.deadlineCardHeader {
+  background-color: #d30c0c;
+  /* background-image: url(./Images/banner4.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  height: 100px;
+  color: white;
+  line-height: 100px;
+}
+
+.testCard{
+  width: 500px;
+}
+
+.testCardHeader {
+  background-color: purple;
+  /* background-image: url(./Images/banner4.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  width: 900px;
+  height: 100px;
+  color: white;
+  line-height: 100px;
+}
+
+
+/*# sourceMappingURL=faculty.css.map */

@@ -11,8 +11,7 @@ export class Routing extends Component {
         return (
             <div>
                 <BrowserRouter>
-                    <Switch>
-                        
+                    <Switch>    
                         <Route exact path="/" component={FacultyMainPage}/>
                     </Switch>
                 </BrowserRouter>
