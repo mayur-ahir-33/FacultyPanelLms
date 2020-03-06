@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { EuiIcon, EuiTreeView, } from '@elastic/eui';
+import {Link} from 'react-router-dom';
 
 export class TreeView extends Component {
     showAlert = () => {
@@ -9,8 +10,13 @@ export class TreeView extends Component {
       render() {
         const items = [
           {
-            label: 'Dashboard',
+            label:<Link to='/'>Dashboard</Link>,
             id: 'dashboard',
+          },
+          {
+            label: <Link to='/subjects'>Subjects</Link>,
+            id: 'dashboard',
+            
           },
           {
             label: 'Assignment',

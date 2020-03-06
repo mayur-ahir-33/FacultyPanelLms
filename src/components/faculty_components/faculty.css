@@ -39,6 +39,19 @@
   line-height: 100px;
 }
 
+.assignmentCard{
+  width: 500px;
+}
+.assignmentCardHeader {
+  background-color: #053e6d;
+  /* background-image: url(./Images/banner4.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  height: 100px;
+  color: white;
+  line-height: 100px;
+}
+
 .testCard{
   width: 500px;
 }
@@ -55,4 +68,13 @@
 }
 
 
-/*# sourceMappingURL=faculty.css.map */
+.subjectsPanel{
+  width: 250px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 30px;
+  padding: 0px 0px 0px 70px;
+  color: white;
+  background: rgb(59,59,144);
+  background: linear-gradient(240deg, rgba(59,59,144,1) 0%, rgba(0,212,255,1) 100%);
+}
