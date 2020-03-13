@@ -13,6 +13,10 @@ import {
 import TreeView from './TreeView'
 import FacultyDashboard from './FacultyDashboard'
 import FacultySubjects from './FacultySubjects';
+import FacultyProfile from './FacultyProfile';
+import FacultyEditProfile from './FacultyEditProfile';
+import Forum from './Forum';
+import GeneralForum from './GeneralForum';
 
 export class FacultyMainPage extends Component {
     render() {
@@ -27,6 +31,10 @@ export class FacultyMainPage extends Component {
                             <Switch>
                                 <Route exact path="/" component={FacultyDashboard} />
                                 <Route exact path="/subjects" component={FacultySubjects} />
+                                <Route exact path="/profile" component={FacultyProfile} />
+                                <Route exact path="/editprofile" component={FacultyEditProfile} />
+                                <Route exact path="/forum" component={Forum} />
+                                <Route exact path="/generalforum" component={GeneralForum} />
                             </Switch>
                         
                     </EuiPageBody>

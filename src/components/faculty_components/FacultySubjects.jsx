@@ -2,51 +2,81 @@ import React, { Component } from 'react'
 import {
     EuiPageHeader,
     EuiPageHeaderSection,
+    EuiPageContent,
+    EuiPageContentBody,
     EuiTitle,
     EuiPanel,
     EuiFlexGrid,
-    EuiFlexItem
+    EuiFlexItem,
+    EuiToolTip,
 } from '@elastic/eui'
 
 export class FacultySubjects extends Component {
+    state = {
+        visibility: 'none',
+        index : 0,
+        content : ''
+    }
+
+    show(subject) {
+        console.log("Show")
+        console.log(subject)
+        this.setState({
+            visibility: 'block',
+            content: subject.syllabus
+        })
+
+    }
+    
+
     render() {
 
-        const subjectList =[
+        
+
+        const subjectList = [
             {
                 'code': 'CE501',
                 'name': 'Theory of Computation',
+                'syllabus': 'This is syllabus',
             },
             {
                 'code': 'CE502',
-                'name': 'Theory of Computation',
+                'name': 'JavaScript',
+                'syllabus': 'This is syllabus',
             },
             {
                 'code': 'CE503',
-                'name': 'Theory of Computation',
+                'name': 'C++',
+                'syllabus': 'This is syllabus',
             },
             {
                 'code': 'CE504',
-                'name': 'Theory of Computation',
+                'name': 'Python',
+                'syllabus': 'This is syllabus',
             },
             {
                 'code': 'CE505',
-                'name': 'Theory of Computation',
+                'name': 'Data Science',
+                'syllabus': 'This is syllabus',
             },
             {
                 'code': 'CE506',
-                'name': 'Theory of Computation',
+                'name': 'Big Data',
+                'syllabus': 'This is syllabus',
             },
         ];
 
-        const subjectListPanels = subjectList.map((subject, index) =>{
-            return(
-                    <EuiFlexItem>
-                        <EuiPanel onClick={'/'} className="subjectsPanel">
-                            <div className="container-fluid">
-                                <p>CE801</p>
-                            </div>
-                        </EuiPanel>
-                    </EuiFlexItem>
+        const subjectListPanels = subjectList.map((subject, index) => {
+            return (
+                <EuiFlexItem  onClick={() => this.show(subject)}>
+                    <EuiPanel className="subjectsPanel">
+                        <div className="container-fluid">
+                            <EuiToolTip position="right" content={subject.name}>
+                                <div>{subject.code}</div>
+                            </EuiToolTip>
+                        </div>
+                    </EuiPanel>
+                </EuiFlexItem>
             );
         });
 
@@ -59,19 +89,18 @@ export class FacultySubjects extends Component {
                         </EuiTitle>
                     </EuiPageHeaderSection>
                 </EuiPageHeader>
-
                 {/* ----------Subject Codes---------- */}
 
-                {/* <EuiPanel className="subjectsPanel">
-                    <div className="container-fluid">
-                        <p>CE801</p>
-                    </div>
-                </EuiPanel> */}
                 <div className="container">
-                <EuiFlexGrid gutterSize="l" columns={4}>               
-                    {subjectListPanels}
-                </EuiFlexGrid>
+                    <EuiFlexGrid gutterSize="l" columns={4}>
+                        {subjectListPanels}
+                    </EuiFlexGrid>
                 </div>
+                <EuiPageContent className='mt-4' style={{ display: this.state.visibility }}>
+                    <EuiPageContentBody>
+                        {this.state.content}
+                    </EuiPageContentBody>
+                </EuiPageContent>
             </div>
         )
     }

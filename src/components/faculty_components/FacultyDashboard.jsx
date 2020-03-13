@@ -199,7 +199,7 @@ export class FacultyDashboard extends Component {
                     {/* ----------Test Card---------- */}
 
                     <EuiFlexItem>
-                        <EuiCard className='p-0'
+                        <EuiCard className='p-0 testCard'
                             title={
                                 <h2 className="testCardHeader " >
                                     <FaRegStickyNote /> Tests
