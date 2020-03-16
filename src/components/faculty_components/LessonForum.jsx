@@ -24,7 +24,7 @@ import {
     EuiFlexGrid,
 } from '@elastic/eui'
 
-export class GeneralForum extends Component {
+export class LessonForum extends Component {
     constructor(props) {
         super(props);
 
@@ -55,15 +55,16 @@ export class GeneralForum extends Component {
     };
 
     render() {
-        // ----------General Forum Variables----------
+        // ----------Lesson Forum Variables----------
 
-        const general = [
+        const lesson = [
             {
                 'id': 'G01',
                 'title': 'Am I learning the right way?',
                 'author': 'Martin Garrix',
                 'time': '5 minutes',
                 'replies': '9',
+                'subject': 'Java',
             },
             {
                 'id': 'G01',
@@ -71,6 +72,7 @@ export class GeneralForum extends Component {
                 'author': 'DJ Snake',
                 'time': '15 minutes',
                 'replies': '10',
+                'subject': 'JavaScript',
             },
             {
                 'id': 'G01',
@@ -78,6 +80,7 @@ export class GeneralForum extends Component {
                 'author': 'Dimitri Vegas',
                 'time': '20 minutes',
                 'replies': '5',
+                'subject': 'Python',
             },
             {
                 'id': 'G01',
@@ -85,6 +88,7 @@ export class GeneralForum extends Component {
                 'author': 'Martin Garrix',
                 'time': '5 minutes',
                 'replies': '9',
+                'subject': 'Java',
             },
             {
                 'id': 'G01',
@@ -92,6 +96,7 @@ export class GeneralForum extends Component {
                 'author': 'DJ Snake',
                 'time': '15 minutes',
                 'replies': '10',
+                'subject': 'JavaScript',
             },
             {
                 'id': 'G01',
@@ -99,10 +104,11 @@ export class GeneralForum extends Component {
                 'author': 'Dimitri Vegas',
                 'time': '20 minutes',
                 'replies': '5',
+                'subject': 'Python',
             },
         ];
 
-        const getGeneral = general.map((post, index) => {
+        const getLesson = lesson.map((post, index) => {
             return (
                 <div>
                     <EuiListGroupItem className="pl-3 pt-3" onClick={'/'} label={
@@ -114,6 +120,7 @@ export class GeneralForum extends Component {
                                             {post.title}
                                         </EuiDescriptionListTitle>
                                         <EuiDescriptionListDescription>
+                                            Subject: {post.subject} <br/>
                                             Posted by: <EuiAvatar size="s" name={post.author} /><EuiLink href="#"> {post.author}</EuiLink> | <MdAccessTime /> {post.time} ago
                                         </EuiDescriptionListDescription>
                                     </EuiDescriptionList>
@@ -195,10 +202,10 @@ export class GeneralForum extends Component {
                 <div>
                     <EuiFlexGrid>
                         <EuiFlexItem>
-                            <EuiPanel style={{ 'max-width': '1200px' }}>
+                            <EuiPanel>
                                 <EuiListGroup maxWidth="1200px" flush={true} bordered={false} className="m-0 mt-3">
                                     <EuiHorizontalRule className="m-0" />
-                                    {getGeneral}
+                                    {getLesson}
                                 </EuiListGroup>
                             </EuiPanel>
                         </EuiFlexItem>
@@ -207,7 +214,7 @@ export class GeneralForum extends Component {
 
                 {/* ---------- Pagination ---------- */}
 
-                <EuiFlexGroup justifyContent="spaceBetween" alignItems="center" style={{'max-width':'900px'}}>
+                <EuiFlexGroup justifyContent="spaceBetween" alignItems="center" style={{ 'max-width': '900px' }}>
                     <EuiFlexItem grow={false}>
                         <EuiPopover
                             button={button}
@@ -226,10 +233,9 @@ export class GeneralForum extends Component {
                         />
                     </EuiFlexItem>
                 </EuiFlexGroup>
-
             </div>
         )
     }
 }
 
-export default GeneralForum
+export default LessonForum

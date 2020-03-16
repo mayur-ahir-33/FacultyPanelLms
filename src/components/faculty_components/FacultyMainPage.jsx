@@ -17,6 +17,12 @@ import FacultyProfile from './FacultyProfile';
 import FacultyEditProfile from './FacultyEditProfile';
 import Forum from './Forum';
 import GeneralForum from './GeneralForum';
+import LessonForum from './LessonForum';
+import ForumThread from './ForumThread';
+import AddTest from './AddTest';
+import AddAssignment from './AddAssignment';
+import Assignment from './Assignment';
+import ViewAssignment from './ViewAssignment';
 
 export class FacultyMainPage extends Component {
     render() {
@@ -33,8 +39,14 @@ export class FacultyMainPage extends Component {
                                 <Route exact path="/subjects" component={FacultySubjects} />
                                 <Route exact path="/profile" component={FacultyProfile} />
                                 <Route exact path="/editprofile" component={FacultyEditProfile} />
+                                <Route exact path="/addtest" component={AddTest} />
+                                <Route exact path="/assignment" component={Assignment} />
+                                <Route exact path="/viewassignment" component={ViewAssignment} />
+                                <Route exact path="/addassignment" component={AddAssignment} />
                                 <Route exact path="/forum" component={Forum} />
                                 <Route exact path="/generalforum" component={GeneralForum} />
+                                <Route exact path="/lessonforum" component={LessonForum} />
+                                <Route exact path="/forumthread" component={ForumThread} />
                             </Switch>
                         
                     </EuiPageBody>
