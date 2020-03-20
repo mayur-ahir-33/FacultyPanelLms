@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import {
-    EuiModal,
-    EuiSelect ,
-    EuiFieldText,
-    EuiModalBody,
-    EuiModalFooter,
-    EuiModalHeader,
-    EuiModalHeaderTitle,
-    EuiOverlayMask,
-    EuiRange,
-    EuiSwitch,
-    EuiCodeBlock,
-   EuiForm,
-   EuiText,
-   EuiFormRow,
-    EuiPage,
-    EuiPageBody,
-    EuiPageSideBar,
-    EuiBadge,
+  EuiModal,
+  EuiSelect,
+  EuiFieldText,
+  EuiModalBody,
+  EuiModalFooter,
+  EuiModalHeader,
+  EuiModalHeaderTitle,
+  EuiOverlayMask,
+  EuiRange,
+  EuiSwitch,
+  EuiCodeBlock,
+  EuiForm,
+  EuiText,
+  EuiFormRow,
+  EuiPage,
+  EuiPageBody,
+  EuiPageSideBar,
+  EuiBadge,
   EuiHealth,
   EuiButton,
   EuiButtonIcon,
@@ -44,17 +44,19 @@ import {
   EuiTableRowCellCheckbox,
   EuiTableSortMobile,
   EuiTableHeaderMobile,
-  } from '@elastic/eui'
-  import {
-    LEFT_ALIGNMENT,
-    RIGHT_ALIGNMENT,
-    Pager,
-    SortableProperties,
-  } from '@elastic/eui/lib/services';
-  
+} from '@elastic/eui'
+import {
+  LEFT_ALIGNMENT,
+  RIGHT_ALIGNMENT,
+  Pager,
+  SortableProperties,
+} from '@elastic/eui/lib/services';
+
 import { EuiButtonEmpty } from '@elastic/eui';
 //import FacultyDashboard from './FacultyDashboard'
 //import { isFunction } from '../../../../../src/services/predicate';
+
+
 export class ViewAssignment extends Component {
   constructor(props) {
     super(props);
@@ -72,25 +74,25 @@ export class ViewAssignment extends Component {
     //pendingModal
     this.closeModal = this.closeModal.bind(this);
     this.showModal = this.showModal.bind(this);
-  // viewAnswerModal
-  this.closeModal1 = this.closeModal1.bind(this);
-  this.showModal1 = this.showModal1.bind(this);
+    // viewAnswerModal
+    this.closeModal1 = this.closeModal1.bind(this);
+    this.showModal1 = this.showModal1.bind(this);
 
     this.items = [
       {
         id: 0,
         title:
-        <EuiButtonEmpty onClick={this.showModal1}>
-             {/* {modal}  */}
-        Assignment1
+          <EuiButtonEmpty onClick={this.showModal1}>
+            {/* {modal}  */}
+            Assignment1
         </EuiButtonEmpty>,
-                  //type: 'user',
+        //type: 'user',
         dateCreated: 'Tue Dec 28 2016',
         magnitude: 1,
-        health:  <EuiButtonEmpty onClick={this.showModal}>
-        {/* {modal}  */}
-   Pending
-   </EuiButtonEmpty>,  
+        health: <EuiButtonEmpty onClick={this.showModal}>
+          {/* {modal}  */}
+          Pending
+   </EuiButtonEmpty>,
         // <EuiHealth color="success">Healthy</EuiHealth>
       },
 
@@ -177,7 +179,7 @@ export class ViewAssignment extends Component {
         alignment: LEFT_ALIGNMENT,
         isSortable: true,
       },
-      
+
       // {
       //   id: 'magnitude',
       //   label: 'Orders of magnitude',
@@ -459,8 +461,8 @@ export class ViewAssignment extends Component {
           const title = item.title.isLink ? (
             <EuiLink href="">{item.title.value}</EuiLink>
           ) : (
-            titleText
-          );
+              titleText
+            );
           child = column.render(title, item);
         } else if (column.cellProvider) {
           child = column.cellProvider(cell);
@@ -563,7 +565,7 @@ export class ViewAssignment extends Component {
 
     return undefined;
   };
-    
+
   onSwitchChange = () => {
     this.setState({
       isSwitchChecked: !this.state.isSwitchChecked,
@@ -585,151 +587,151 @@ export class ViewAssignment extends Component {
     this.setState({ isModal1Visible: true });
   }
   render() {
-      //modal
-      let modal;
-      let modal1;
-      if (this.state.isModal1Visible) {
-        modal1 = (
-          <EuiOverlayMask>
-            <EuiModal onClose={this.closeModal}>
-              <EuiModalHeader>
-                <EuiModalHeaderTitle>Overflow test</EuiModalHeaderTitle>
-              </EuiModalHeader>
-  
-              <EuiModalBody>
-                <EuiText>
-                  <p>
-                    KING. Whats he that wishes so? My cousin, Westmorland? No, my
-                    fair cousin; If we are mark&rsquo;d to die, we are enow To do
-                    our country loss; and if to live, The fewer men, the greater
-                    share of honour. God&rsquo;s will! I pray thee, wish not one
-                    man more. By Jove, I am not covetous for gold, Nor care I who
-                    doth feed upon my cost; It yearns me not if men my garments
-                    wear; Such outward things dwell not in my desires. But if it
-                    be a sin to covet honour, I am the most offending soul alive.
-                    No, faith, my coz, wish not a man from England. God&rsquo;s
-                    peace! I would not lose so great an honour As one man more
-                    methinks would share from me For the best hope I have. O, do
-                    not wish one more! Rather proclaim it, Westmorland, through my
-                    host, That he which hath no stomach to this fight, Let him
-                    depart; his passport shall be made, And crowns for convoy put
-                    into his purse; We would not die in that man&rsquo;s company
-                    That fears his fellowship to die with us. This day is
-                    call&rsquo;d the feast of Crispian. He that outlives this day,
-                    and comes safe home, Will stand a tip-toe when this day is
-                    nam&rsquo;d, And rouse him at the name of Crispian. He that
-                    shall live this day, and see old age, Will yearly on the vigil
-                    feast his neighbours, And say &ldquo;To-morrow is Saint
-                    Crispian.&rdquo; Then will he strip his sleeve and show his
-                    scars, And say &ldquo;These wounds I had on Crispin&rsquo;s
-                    day.&rdquo; Old men forget; yet all shall be forgot, But
-                    he&rsquo;ll remember, with advantages, What feats he did that
-                    day. Then shall our names, Familiar in his mouth as household
-                    words— Harry the King, Bedford and Exeter, Warwick and Talbot,
-                    Salisbury and Gloucester— Be in their flowing cups freshly
-                    rememb&rsquo;red. This story shall the good man teach his son;
-                    And Crispin Crispian shall ne&rsquo;er go by, From this day to
-                    the ending of the world, But we in it shall be rememberèd— We
-                    few, we happy few, we band of brothers; For he to-day that
-                    sheds his blood with me Shall be my brother; be he ne&rsquo;er
-                    so vile, This day shall gentle his condition; And gentlemen in
-                    England now a-bed Shall think themselves accurs&rsquo;d they
-                    were not here, And hold their manhoods cheap whiles any speaks
-                    That fought with us upon Saint Crispin&rsquo;s day.
+    //modal
+    let modal;
+    let modal1;
+    if (this.state.isModal1Visible) {
+      modal1 = (
+        <EuiOverlayMask>
+          <EuiModal onClose={this.closeModal}>
+            <EuiModalHeader>
+              <EuiModalHeaderTitle>Overflow test</EuiModalHeaderTitle>
+            </EuiModalHeader>
+
+            <EuiModalBody>
+              <EuiText>
+                <p>
+                  KING. Whats he that wishes so? My cousin, Westmorland? No, my
+                  fair cousin; If we are mark&rsquo;d to die, we are enow To do
+                  our country loss; and if to live, The fewer men, the greater
+                  share of honour. God&rsquo;s will! I pray thee, wish not one
+                  man more. By Jove, I am not covetous for gold, Nor care I who
+                  doth feed upon my cost; It yearns me not if men my garments
+                  wear; Such outward things dwell not in my desires. But if it
+                  be a sin to covet honour, I am the most offending soul alive.
+                  No, faith, my coz, wish not a man from England. God&rsquo;s
+                  peace! I would not lose so great an honour As one man more
+                  methinks would share from me For the best hope I have. O, do
+                  not wish one more! Rather proclaim it, Westmorland, through my
+                  host, That he which hath no stomach to this fight, Let him
+                  depart; his passport shall be made, And crowns for convoy put
+                  into his purse; We would not die in that man&rsquo;s company
+                  That fears his fellowship to die with us. This day is
+                  call&rsquo;d the feast of Crispian. He that outlives this day,
+                  and comes safe home, Will stand a tip-toe when this day is
+                  nam&rsquo;d, And rouse him at the name of Crispian. He that
+                  shall live this day, and see old age, Will yearly on the vigil
+                  feast his neighbours, And say &ldquo;To-morrow is Saint
+                  Crispian.&rdquo; Then will he strip his sleeve and show his
+                  scars, And say &ldquo;These wounds I had on Crispin&rsquo;s
+                  day.&rdquo; Old men forget; yet all shall be forgot, But
+                  he&rsquo;ll remember, with advantages, What feats he did that
+                  day. Then shall our names, Familiar in his mouth as household
+                  words— Harry the King, Bedford and Exeter, Warwick and Talbot,
+                  Salisbury and Gloucester— Be in their flowing cups freshly
+                  rememb&rsquo;red. This story shall the good man teach his son;
+                  And Crispin Crispian shall ne&rsquo;er go by, From this day to
+                  the ending of the world, But we in it shall be rememberèd— We
+                  few, we happy few, we band of brothers; For he to-day that
+                  sheds his blood with me Shall be my brother; be he ne&rsquo;er
+                  so vile, This day shall gentle his condition; And gentlemen in
+                  England now a-bed Shall think themselves accurs&rsquo;d they
+                  were not here, And hold their manhoods cheap whiles any speaks
+                  That fought with us upon Saint Crispin&rsquo;s day.
                   </p>
-                </EuiText>
-              </EuiModalBody>
-  
-              <EuiModalFooter>
-                <EuiButtonEmpty onClick={this.closeModal1}>Cancel</EuiButtonEmpty>
-  
-                <EuiButton onClick={this.closeModal1} fill>
-                  Save
+              </EuiText>
+            </EuiModalBody>
+
+            <EuiModalFooter>
+              <EuiButtonEmpty onClick={this.closeModal1}>Cancel</EuiButtonEmpty>
+
+              <EuiButton onClick={this.closeModal1} fill>
+                Save
                 </EuiButton>
-              </EuiModalFooter>
-            </EuiModal>
-          </EuiOverlayMask>
-        );
-      }
-      const formSample = (
-        <EuiForm>
-           <EuiFormRow label="Accept Submission" >
-          <EuiSelect 
+            </EuiModalFooter>
+          </EuiModal>
+        </EuiOverlayMask>
+      );
+    }
+    const formSample = (
+      <EuiForm>
+        <EuiFormRow label="Accept Submission" >
+          <EuiSelect
             options={[
               { value: 'theory', text: 'Accepted' },
               { value: 'Programming', text: 'Rejected' },
-              
+
             ]}
-            
+
           />
-            </EuiFormRow>
-            <EuiFormRow label="Grade" >
-          <EuiSelect 
+        </EuiFormRow>
+        <EuiFormRow label="Grade" >
+          <EuiSelect
             options={[
               { value: 'theory', text: 'A' },
               { value: 'Programming', text: 'B' },
               { value: 'Programming', text: 'C' },
-              
+
             ]}
-            
+
           />
-            </EuiFormRow>
-            <EuiFormRow label="Remarks" >
+        </EuiFormRow>
+        <EuiFormRow label="Remarks" >
           <EuiFieldText id="remark" placeholder="Remarks If any"></EuiFieldText>
-            </EuiFormRow>
-            {/* <EuiSwitch
+        </EuiFormRow>
+        {/* <EuiSwitch
               //id={makeId()}
               name="popswitch"
               label="Isn't this modal form cool?"
               checked={this.state.isSwitchChecked}
               onChange={this.onSwitchChange}
             /> */}
-          
-  
-          {/* <EuiFormRow label="A text field">
+
+
+        {/* <EuiFormRow label="A text field">
             <EuiFieldText name="popfirst" />
           </EuiFormRow>
   
           <EuiFormRow label="Range" helpText="Some help text for the range">
             <EuiRange min={0} max={100} name="poprange" />
           </EuiFormRow> */}
-  
-          {/* <EuiFormRow label="A SuperSelect field">
+
+        {/* <EuiFormRow label="A SuperSelect field">
             <SuperSelectComplexExample />
           </EuiFormRow> */}
-  
-          <EuiSpacer />
-  
-          {/* <EuiCodeBlock language="html" paddingSize="s" isCopyable>
+
+        <EuiSpacer />
+
+        {/* <EuiCodeBlock language="html" paddingSize="s" isCopyable>
             {'<h1>Title</h1>'}
           </EuiCodeBlock> */}
-        </EuiForm>
-      );
-  
-     
-  
-      if (this.state.isModalVisible) {
-        modal = (
-          <EuiOverlayMask>
-            <EuiModal onClose={this.closeModal} initialFocus="[name=popswitch]">
-              <EuiModalHeader>
-                <EuiModalHeaderTitle>Review Assignment</EuiModalHeaderTitle>
-              </EuiModalHeader>
-  
-              <EuiModalBody>{formSample}</EuiModalBody>
-  
-              <EuiModalFooter>
-                <EuiButtonEmpty onClick={this.closeModal}>Cancel</EuiButtonEmpty>
-  
-                <EuiButton onClick={this.closeModal} fill>
-                  Review
+      </EuiForm>
+    );
+
+
+
+    if (this.state.isModalVisible) {
+      modal = (
+        <EuiOverlayMask>
+          <EuiModal onClose={this.closeModal} initialFocus="[name=popswitch]">
+            <EuiModalHeader>
+              <EuiModalHeaderTitle>Review Assignment</EuiModalHeaderTitle>
+            </EuiModalHeader>
+
+            <EuiModalBody>{formSample}</EuiModalBody>
+
+            <EuiModalFooter>
+              <EuiButtonEmpty onClick={this.closeModal}>Cancel</EuiButtonEmpty>
+
+              <EuiButton onClick={this.closeModal} fill>
+                Review
                 </EuiButton>
-              </EuiModalFooter>
-            </EuiModal>
-          </EuiOverlayMask>
-        );
-      }
-      //modal end
+            </EuiModalFooter>
+          </EuiModal>
+        </EuiOverlayMask>
+      );
+    }
+    //modal end
 
     let optionalActionButtons;
 
@@ -740,71 +742,71 @@ export class ViewAssignment extends Component {
         </EuiFlexItem>
       );
     }
-        return (
+    return (
+      <div>
+
+        <EuiPage>
+
+          <EuiPageBody>
             <div>
-               
-                <EuiPage>
-                    
-                    <EuiPageBody>
- <div>
-   
- 
-        {/* <EuiButton
+
+
+              {/* <EuiButton
           onClick={() => window.location.assign('Addassignment')}
           iconType="createSingleMetricJob">
           Add Assignment
         </EuiButton> */}
- 
-   
-        <EuiFlexGroup gutterSize="m">
-          {optionalActionButtons}
 
-          <EuiFlexItem>
-            <EuiFieldSearch fullWidth placeholder="Search..." />
-          </EuiFlexItem>
-        </EuiFlexGroup>
 
-        <EuiSpacer size="m" />
+              <EuiFlexGroup gutterSize="m">
+                {optionalActionButtons}
 
-        <EuiTableHeaderMobile>
-          <EuiFlexGroup
-            responsive={false}
-            justifyContent="spaceBetween"
-            alignItems="baseline">
-            <EuiFlexItem grow={false}>{this.renderSelectAll(true)}</EuiFlexItem>
-            <EuiFlexItem grow={false}>
-              <EuiTableSortMobile items={this.getTableMobileSortItems()} />
-            </EuiFlexItem>
-          </EuiFlexGroup>
-        </EuiTableHeaderMobile>
+                <EuiFlexItem>
+                  <EuiFieldSearch fullWidth placeholder="Search..." />
+                </EuiFlexItem>
+              </EuiFlexGroup>
 
-        <EuiTable>
-          <EuiTableHeader>{this.renderHeaderCells()}</EuiTableHeader>
+              <EuiSpacer size="m" />
 
-          <EuiTableBody>{this.renderRows()}</EuiTableBody>
+              <EuiTableHeaderMobile>
+                <EuiFlexGroup
+                  responsive={false}
+                  justifyContent="spaceBetween"
+                  alignItems="baseline">
+                  <EuiFlexItem grow={false}>{this.renderSelectAll(true)}</EuiFlexItem>
+                  <EuiFlexItem grow={false}>
+                    <EuiTableSortMobile items={this.getTableMobileSortItems()} />
+                  </EuiFlexItem>
+                </EuiFlexGroup>
+              </EuiTableHeaderMobile>
 
-          <EuiTableFooter>{this.renderFooterCells()}</EuiTableFooter>
-        </EuiTable>
-{modal}
-{modal1}
-        <EuiSpacer size="m" />
+              <EuiTable>
+                <EuiTableHeader>{this.renderHeaderCells()}</EuiTableHeader>
 
-        <EuiTablePagination
-          activePage={this.pager.getCurrentPageIndex()}
-          itemsPerPage={this.state.itemsPerPage}
-          itemsPerPageOptions={[5, 10, 20]}
-          pageCount={this.pager.getTotalPages()}
-          onChangeItemsPerPage={this.onChangeItemsPerPage}
-          onChangePage={this.onChangePage}
-        />
-      </div>
-  
-                        {/* <FacultyDashboard/> */}
-                    </EuiPageBody>
-                </EuiPage>
+                <EuiTableBody>{this.renderRows()}</EuiTableBody>
+
+                <EuiTableFooter>{this.renderFooterCells()}</EuiTableFooter>
+              </EuiTable>
+              {modal}
+              {modal1}
+              <EuiSpacer size="m" />
+
+              <EuiTablePagination
+                activePage={this.pager.getCurrentPageIndex()}
+                itemsPerPage={this.state.itemsPerPage}
+                itemsPerPageOptions={[5, 10, 20]}
+                pageCount={this.pager.getTotalPages()}
+                onChangeItemsPerPage={this.onChangeItemsPerPage}
+                onChangePage={this.onChangePage}
+              />
             </div>
-        )
-    }
+
+            {/* <FacultyDashboard/> */}
+          </EuiPageBody>
+        </EuiPage>
+      </div>
+    )
+  }
 }
 
 export default ViewAssignment;

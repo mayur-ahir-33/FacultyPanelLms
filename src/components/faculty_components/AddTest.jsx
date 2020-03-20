@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import moment from 'moment';
 import {
     EuiPageHeader,
     EuiPageHeaderSection,
@@ -7,6 +8,8 @@ import {
     EuiFormRow,
     EuiFieldText,
     EuiSelect,
+    EuiDatePicker,
+    EuiButton,
 } from '@elastic/eui';
 
 export class AddTest extends Component {
@@ -44,16 +47,41 @@ export class AddTest extends Component {
             { value: 'option_multi', text: 'Multiple Time' },
         ];
 
+        this.durationType = [
+            { value: 'option_select', text: 'Please select' },
+            { value: 'option_duration', text: 'Only Duration' },
+            { value: 'option_date', text: 'Duration and Date' },
+        ];
+
 
 
         this.state = {
+            visibility: 'none',
             dept: this.dept[0].value,
             sem: this.sem[0].value,
             subject: this.subject[0].value,
             attempts: this.attempts[0].value,
+            durationType: this.durationType[0].value,
+            time: moment(),
+            startDate: moment(),
+            endDate: moment(),
         };
 
-        // this.handleChange = this.handleChange.bind(this);
+        this.onChangeStartDate = this.onChangeStartDate.bind(this);
+        this.onChangeEndDate = this.onChangeEndDate.bind(this);
+        this.onChangeDuration = this.onChangeDuration.bind(this);
+    }
+
+    onChangeStartDate(date) {
+        this.setState({
+            startDate: date,
+        });
+    }
+
+    onChangeEndDate(date) {
+        this.setState({
+            endDate: date,
+        });
     }
 
     onChangeDept = e => {
@@ -76,7 +104,20 @@ export class AddTest extends Component {
 
     onChangeAttempts = e => {
         this.setState({
-            Attempts: e.target.value,
+            attempts: e.target.value,
+        });
+    };
+
+    onChangeDuration(date) {
+        this.setState({
+            time: date,
+        });
+    }
+
+    onChangeDurationType = e => {
+        this.setState({
+            durationType: e.target.value,
+            visibility: e.target.value === 'option_date' ? 'block' : 'none',
         });
     };
 
@@ -110,16 +151,67 @@ export class AddTest extends Component {
                             id="sem"
                             options={this.sem}
                             value={this.state.value}
-                            onChange={this.onChangeDept}
+                            onChange={this.onChangeSem}
                         />
                     </EuiFormRow>
                     <EuiFormRow label="Subject:">
                         <EuiSelect
-                            id="dept"
-                            options={this.gender}
+                            id="subject"
+                            options={this.subject}
                             value={this.state.value}
-                            onChange={this.onChangeDept}
+                            onChange={this.onChangeSubject}
                         />
+                    </EuiFormRow>
+                    <EuiFormRow label="Attempts:">
+                        <EuiSelect
+                            id="attempts"
+                            options={this.attempts}
+                            value={this.state.value}
+                            onChange={this.onChangeAttempts}
+                        />
+                    </EuiFormRow>
+                    <EuiFormRow label="Duration Type:">
+                        <EuiSelect
+                            id="durationType"
+                            options={this.durationType}
+                            value={this.state.value}
+                            onChange={this.onChangeDurationType}
+                        />
+                    </EuiFormRow>
+                    <EuiFormRow label="Duration">
+                        <EuiDatePicker
+                            showTimeSelect
+                            showTimeSelectOnly
+                            selected={this.state.time}
+                            onChange={this.onChangeDuration}
+                            dateFormat="HH:mm"
+                            timeFormat="HH:mm"
+                        />
+                    </EuiFormRow>
+                    <EuiFormRow label="Start Date" style={{ display: this.state.visibility }}>
+                        <EuiDatePicker
+                            showTimeSelect
+                            selected={this.state.startDate}
+                            onChange={this.onChangeStartDate}
+                            dateFormat="DD/MM/YYYY HH:mm"
+                        />
+                    </EuiFormRow>
+                    <EuiFormRow label="End Date" style={{ display: this.state.visibility }}>
+                        <EuiDatePicker
+                            showTimeSelect
+                            selected={this.state.endDate}
+                            onChange={this.onChangeEndDate}
+                            dateFormat="DD/MM/YYYY HH:mm"
+                        />
+                    </EuiFormRow>
+                    <EuiFormRow label="Pass Value">
+                        <EuiFieldText name="passValue" />
+                    </EuiFormRow>
+                    <EuiFormRow label="Negative Marks">
+                        <EuiFieldText name="negativeMarks" />
+                    </EuiFormRow>
+                    <EuiFormRow>
+                        <EuiButton className="float-left">Add Test</EuiButton>
                     </EuiFormRow>
                 </EuiForm>
             </div>

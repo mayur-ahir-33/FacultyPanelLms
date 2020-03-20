@@ -23,6 +23,7 @@ import AddTest from './AddTest';
 import AddAssignment from './AddAssignment';
 import Assignment from './Assignment';
 import ViewAssignment from './ViewAssignment';
+import MessengerChat from './MessengerChat';
 
 export class FacultyMainPage extends Component {
     render() {
@@ -40,13 +41,14 @@ export class FacultyMainPage extends Component {
                                 <Route exact path="/profile" component={FacultyProfile} />
                                 <Route exact path="/editprofile" component={FacultyEditProfile} />
                                 <Route exact path="/addtest" component={AddTest} />
-                                <Route exact path="/assignment" component={Assignment} />
-                                <Route exact path="/viewassignment" component={ViewAssignment} />
+                                <Route exact path="/viewAssignment" component={Assignment} />
+                                <Route exact path="/gradeAssignment" component={ViewAssignment} />
                                 <Route exact path="/addassignment" component={AddAssignment} />
                                 <Route exact path="/forum" component={Forum} />
                                 <Route exact path="/generalforum" component={GeneralForum} />
                                 <Route exact path="/lessonforum" component={LessonForum} />
                                 <Route exact path="/forumthread" component={ForumThread} />
+                                <Route exact path="/chat" component={MessengerChat} />
                             </Switch>
                         
                     </EuiPageBody>

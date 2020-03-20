@@ -192,7 +192,7 @@ export class LessonForum extends Component {
                 <EuiPageHeader>
                     <EuiPageHeaderSection>
                         <EuiTitle size="l">
-                            <h1>General Forum</h1>
+                            <h1>Lesson Forum</h1>
                         </EuiTitle>
                     </EuiPageHeaderSection>
                 </EuiPageHeader>

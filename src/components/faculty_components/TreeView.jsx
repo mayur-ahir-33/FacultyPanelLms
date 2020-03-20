@@ -20,47 +20,66 @@ export class TreeView extends Component {
           },
           {
             label: 'Assignment',
-            id: 'dept',
+            id: 'assign',
             icon: <EuiIcon type="folderClosed" />,
             iconWhenExpanded: <EuiIcon type="folderOpen" />,
             isExpanded: true,
             children: [
               {
-                label: 'Add Assign',
-                id: 'addAssign',
+                label: <Link to='/viewAssignment'>View Assign</Link>,
+                id: 'viewAssign',
                 icon: <EuiIcon type="document" />,
               },
               {
-                label: 'View Assign',
-                id: 'viewAssign',
+                label: <Link to='/gradeAssignment'>Grade Assign</Link>,
+                id: 'gradeAssign',
                 icon: <EuiIcon type="document" />,
                 
               },
             ],
           },
           {
-            label: 'Quiz',
-            id: 'quiz',
+            label: 'Test',
+            id: 'test',
             icon: <EuiIcon type="folderClosed" />,
             iconWhenExpanded: <EuiIcon type="folderOpen" />,
             isExpanded: true,
             children: [
               {
-                label: 'Add Quiz',
-                id: 'addQuiz',
+                label: <Link to='/addtest'>Add Test</Link>,
+                id: 'addtest',
                 icon: <EuiIcon type="document" />,
               },
               {
-                label: 'View Quiz',
-                id: 'viewQuiz',
+                label: 'View Test',
+                id: 'viewTest',
                 icon: <EuiIcon type="document" />,
               },
             ],
           },
           {
-            label: 'Reports',
-            id: 'reports',
-            icon: <EuiIcon type="document" />,
+            label: 'Forum',
+            id: 'forum',
+            icon: <EuiIcon type="folderClosed" />,
+            iconWhenExpanded: <EuiIcon type="folderOpen" />,
+            isExpanded: true,
+            children: [
+              {
+                label: <Link to='/Forum'>Forum</Link>,
+                id: 'forum',
+                icon: <EuiIcon type="document" />,
+              },
+              {
+                label: <Link to='/generalforum'>General Forum</Link>,
+                id: 'generalForum',
+                icon: <EuiIcon type="document" />,
+              },
+              {
+                label: <Link to='/lessonforum'>Lesson Forum</Link>,
+                id: 'lessonForum',
+                icon: <EuiIcon type="document" />,
+              },
+            ],
           },
         ];
     
